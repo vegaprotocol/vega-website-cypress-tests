@@ -1,4 +1,4 @@
-describe('VEGA.XYZ homepage', () => {
+describe('Page link tests', () => {
   before(() => {
     cy.visit('/')
   })
@@ -6,7 +6,7 @@ describe('VEGA.XYZ homepage', () => {
   // Might be worth separating this function out into a helper file. Leaving it
   // here for the moment so the tests don't appear too abstract at first
   // glance
-  const testPageLink = function(linkText, path, location, _blank) {
+  const testPageLink = (linkText, path, location, _blank) => {
     it(`The ${location} has a link to ${linkText}`, () => {
       const selector = { nav: 'div#mobileMenu', footer: 'footer'}
       cy.get(selector[location]).within(() => {
