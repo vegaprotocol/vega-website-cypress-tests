@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:run":"npx cypress run"
+    "cy:run": "npx cypress run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^9.0.0"
+  },
+  "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.1.0"
   }
 }
