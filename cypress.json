@@ -1,3 +1,6 @@
 {
-    "baseUrl":"https://vega.xyz"
+    "baseUrl":"https://vega.xyz",
+    "screenshotOnRunFailure": false,
+    "video": false
+
 }
