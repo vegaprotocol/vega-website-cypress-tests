@@ -4,7 +4,7 @@ describe('Component content checks', () => {
     cy.get('div[data-cy="incentive"]').each(($el, index, list) => {
       cy.wrap(list).should('have.length.of.at.least', 2);
       cy.wrap($el).invoke('text')
-        .should('match', /^(Bounty|Incentive)[\s\S]+Reward:\d+ (DAI|VEGA)View$/)
+        .should('match', /^(Bounty|Incentive)[\s\S]+Reward:\d+(\sDAI|\sVEGA)?View$/)
     });
   });
   
@@ -13,7 +13,7 @@ describe('Component content checks', () => {
     cy.get('div[data-cy="incentive"]').each(($el, index, list) => {
       cy.wrap(list).should('have.length.of.at.least', 2);
       cy.wrap($el).invoke('text')
-        .should('match', /^(Bounty|Incentive)[\s\S]+Reward:\d+ (DAI|VEGA)View$/)
+        .should('match', /^(Bounty|Incentive)[\s\S]+Reward:\d+(\sDAI|\sVEGA)?View$/)
     });
   });
 
