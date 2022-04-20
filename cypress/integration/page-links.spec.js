@@ -41,7 +41,7 @@ describe('Page link tests', () => {
   testPageLink('Use the network', '/use/', 'footer');
   testPageLink('Stake tokens', 'https://token.vega.xyz/staking/', 'footer', true);
   testPageLink('Configure the network', 'https://token.vega.xyz/governance', 'footer', true);
-  testPageLink('Get tokens', '/en/community/#contributions', 'footer');
+  testPageLink('Get tokens', '/community/#contributions', 'footer');
   testPageLink('Fairground (Testnet)', 'https://fairground.wtf/', 'footer', true);
   // -- Community
   testPageLink('Join the community', '/community/', 'footer');
