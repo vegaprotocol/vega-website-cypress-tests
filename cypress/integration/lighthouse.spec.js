@@ -11,7 +11,6 @@ describe('Page content tests', () => {
     });
   }
 
-
   testPage('/', { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, });
   testPage('/key-concepts/', { performance: 60, accessibility: 95, "best-practices": 90, seo: 85, pwa: 65, });
   testPage('/papers/', { performance: 60, accessibility: 95, "best-practices": 90, seo: 85, pwa: 65, });
@@ -22,5 +21,6 @@ describe('Page content tests', () => {
   testPage('/careers', { performance: 60, accessibility: 95, "best-practices": 90, seo: 85, pwa: 65, });
   testPage('/community/contributors', { performance: 60, accessibility: 95, "best-practices": 90, seo: 85, pwa: 65, });
   testPage('/partners-backers/', { performance: 60, accessibility: 100, "best-practices": 90, seo: 85, pwa: 65, });
+  testPage('/wallet/', { performance: 60, accessibility: 100, "best-practices": 90, seo: 85, pwa: 65, });
 });
 

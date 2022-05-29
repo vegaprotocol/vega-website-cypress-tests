@@ -8,5 +8,6 @@ export const pages = [
   { path: '/careers/' },
   { path: '/community/contributors' },
   { path: '/community/ambassadors' },
-  { path: '/partners-backers' }
+  { path: '/partners-backers' },
+  { path: '/wallet' }
 ]
