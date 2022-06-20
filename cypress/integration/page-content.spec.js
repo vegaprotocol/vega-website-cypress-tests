@@ -29,6 +29,6 @@ describe('Page content tests', () => {
   testPage('/careers', 'Careers at Vega | Vega Protocol',);
   testPage('/community/contributors', 'Contributors | Vega Protocol',);
   testPage('/partners-backers/', 'Partners & Backers | Vega Protocol',);
-  testPage('/wallet/', 'Get the vega wallet | Vega Protocol',);
+  testPage('/wallet/', 'Get the Vega Wallet | Vega Protocol',);
 });
 
