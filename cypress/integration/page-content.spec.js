@@ -1,13 +1,14 @@
-describe('Page content tests', () => {
-  const testPage = (url, title) => {
-    context(url, () => {
-  
+import { pages } from "../support/pages"
+
+pages.forEach((page) => {
+  describe('Page content tests', () => {
+    context(page.path, () => {
       before(() => {
-        cy.visit(url);
+        cy.visit(page.path);
       });
   
       it(`The page loads`, () => {
-        cy.title().should('eql', title);
+        cy.title().should('eql', page.title);
       });
   
       it('The page has the header, body and footer', () => {
@@ -16,19 +17,5 @@ describe('Page content tests', () => {
         cy.get('footer').should('be.visible');
       });
     });
-  }
-
-
-  testPage('/', 'Blockchain derivatives | Vega Protocol',);
-  testPage('/key-concepts/', 'Key Vega Concepts | Vega Protocol');
-  testPage('/papers/', 'Papers & Research | Vega Protocol',);
-  testPage('/talks/', 'Talks | Vega Protocol',);
-  testPage('/use/', 'Use the network | Vega Protocol',);
-  testPage('/develop/', 'Develop with Vega | Vega Protocol',);
-  testPage('/community', 'Community | Vega Protocol',);
-  testPage('/careers', 'Careers at Vega | Vega Protocol',);
-  testPage('/community/contributors', 'Contributors | Vega Protocol',);
-  testPage('/partners-backers/', 'Partners & Backers | Vega Protocol',);
-  testPage('/wallet/', 'Get the Vega Wallet | Vega Protocol',);
+  });
 });
-

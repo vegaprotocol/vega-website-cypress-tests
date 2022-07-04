@@ -8,10 +8,10 @@ pages.forEach((page) => {
   
     it('check all links in main', () => {
       cy.get("body").within(() => {
-          cy.get("a").each(page => {
-            console.log(page)
-              cy.request(page.prop('href'));
-          })
+        cy.get("a").each(page => {
+          console.log(page)
+            cy.request(page.prop('href'));
+        })
       })
     });
   });
