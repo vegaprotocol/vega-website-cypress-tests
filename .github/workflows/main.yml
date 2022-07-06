@@ -2,7 +2,7 @@ name: End-to-end tests
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 0 * * *'
+    - cron: "0 0 * * *"
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
@@ -13,8 +13,5 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
-      - name: Send to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.19.0
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
