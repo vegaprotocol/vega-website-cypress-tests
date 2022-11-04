@@ -7,6 +7,9 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run"
   },
+  "engines": {
+    "node": "16.18.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
