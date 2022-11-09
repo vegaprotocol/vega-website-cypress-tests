@@ -14,6 +14,7 @@ env:
 
 jobs:
   add_issue_frontend:
+    # yamllint disable rule:line-length
     runs-on: ubuntu-latest
     steps:
       - name: "Add to front end project board"
@@ -26,14 +27,13 @@ jobs:
                 }
               }
             }' -f project=$PROJECT_ID -f issue=$ISSUE_ID -f user=$USER
+
       - name: "Add repo identifier label"
         run: |
           gh api graphql -f query='
-            mutation($user:String!, $issue:ID!, $labels:[ID!]!) {
-              addLabelsToLabelable(input: {clientMutationId: $user, labelableId: $issue, labelIds: $labels}) {
+            mutation($user:String!, $issue:ID!) {
+              addLabelsToLabelable(input: {clientMutationId: $user, labelableId: $issue, labelIds: ["LA_kwDOGb2K7s8AAAABDzKRyA", "LA_kwDOGb2K7s8AAAABDzKPFQ"]}) {
                 clientMutationId
               }
-            }
-            variables {
-              labels: ["LA_kwDOGb2K7s8AAAABDzKRyA", "LA_kwDOGb2K7s8AAAABDzKPFQ"]
-              }' -f issue=$ISSUE_ID -f user=$USER
+            }' -f issue=$ISSUE_ID -f user=$USER
+      # yamllint enable rule:line-length
