@@ -1,11 +1,36 @@
-const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const { lighthouse, prepareAudit } = require('@cypress-audit/lighthouse')
 
 module.exports = (on, config) => {
-  on("before:browser:launch", (browser = {}, launchOptions) => {
-    prepareAudit(launchOptions);
-  });
+  on('before:browser:launch', (browser = {}, launchOptions) => {
+    prepareAudit(launchOptions)
+  })
 
-  on("task", {
-    lighthouse: lighthouse(), // calling the function is important
-  });
-};
+  on('task', {
+    async lighthouse(allOptions) {
+      let txt
+      const lighthouseTask = lighthouse((lighthouseReport) => {
+        let lighthouseScoreText = ''
+        let lighthouseResult = lighthouseReport?.lhr?.categories
+        let lighthousePerformance =
+          'Performance: ' + lighthouseResult?.performance?.score + '\n'
+        let lighthouseAccessibility =
+          'Accessibility: ' + lighthouseResult?.accessibility?.score + '\n'
+        let lighthouseBestPractices =
+          'Best Practices: ' + lighthouseResult?.['best-practices']?.score + '\n'
+        let lighthouseSEO = 'SEO: ' + lighthouseResult?.seo?.score + '\n'
+        lighthouseScoreText =
+          lighthousePerformance +
+          lighthouseAccessibility +
+          lighthouseBestPractices +
+          lighthouseSEO
+
+        console.log(lighthouseScoreText)
+        txt = lighthouseScoreText
+      })
+
+      const report = await lighthouseTask(allOptions)
+      report.txt = txt
+      return report
+    },
+  })
+}
