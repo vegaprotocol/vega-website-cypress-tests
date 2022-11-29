@@ -9,10 +9,7 @@ pages.forEach((page) => {
   
       it(`The page meets lighthouse baseline`, () => {
         cy.lighthouse(page.lighthouse)
-        .then((report) => {
-          cy.log(report.txt)
-        });
       });
     });
-  });
-});
+   });
+ });
