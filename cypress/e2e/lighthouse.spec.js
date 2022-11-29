@@ -11,6 +11,5 @@ pages.forEach((page) => {
         cy.lighthouse(page.lighthouse)
       });
     });
-  });
-});
-
+   });
+ });
