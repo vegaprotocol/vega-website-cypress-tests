@@ -5,32 +5,7 @@ module.exports = (on, config) => {
     prepareAudit(launchOptions)
   })
 
-  on('task', {
-    async lighthouse(allOptions) {
-      let txt
-      const lighthouseTask = lighthouse((lighthouseReport) => {
-        let lighthouseScoreText = ''
-        let lighthouseResult = lighthouseReport?.lhr?.categories
-        let lighthousePerformance =
-          'Performance: ' + lighthouseResult?.performance?.score + '\n'
-        let lighthouseAccessibility =
-          'Accessibility: ' + lighthouseResult?.accessibility?.score + '\n'
-        let lighthouseBestPractices =
-          'Best Practices: ' + lighthouseResult?.['best-practices']?.score + '\n'
-        let lighthouseSEO = 'SEO: ' + lighthouseResult?.seo?.score + '\n'
-        lighthouseScoreText =
-          lighthousePerformance +
-          lighthouseAccessibility +
-          lighthouseBestPractices +
-          lighthouseSEO
-
-        console.log(lighthouseScoreText)
-        txt = lighthouseScoreText
-      })
-
-      const report = await lighthouseTask(allOptions)
-      report.txt = txt
-      return report
-    },
-  })
+  on("task", {
+    lighthouse: lighthouse(), // calling the function is important
+  });
 }
