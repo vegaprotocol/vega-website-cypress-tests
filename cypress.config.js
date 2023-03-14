@@ -12,5 +12,13 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://vega.xyz',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+     
   },
+  
+    "retries": {
+      // Configure retry attempts for `cypress run`
+      // Default is 0
+      "runMode": 1,
+    }
+  
 })
