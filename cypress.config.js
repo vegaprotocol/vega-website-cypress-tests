@@ -1,8 +1,8 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  screenshotOnRunFailure: false,
-  video: false,
+  screenshotOnRunFailure: true,
+  video: true,
   projectId: 'sc38ph',
   e2e: {
     // We've imported your old cypress plugins here.
