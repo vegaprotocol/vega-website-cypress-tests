@@ -1,8 +1,8 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  screenshotOnRunFailure: true,
-  video: true,
+  screenshotOnRunFailure: false,
+  video: false,
   projectId: 'sc38ph',
   e2e: {
     // We've imported your old cypress plugins here.
@@ -18,7 +18,7 @@ module.exports = defineConfig({
     "retries": {
       // Configure retry attempts for `cypress run`
       // Default is 0
-      "runMode": 1,
+      "runMode": 0,
     }
   
 })
