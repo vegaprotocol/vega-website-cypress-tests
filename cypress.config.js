@@ -12,6 +12,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://vega.xyz',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    testIsolation: false,
      
   },
   
