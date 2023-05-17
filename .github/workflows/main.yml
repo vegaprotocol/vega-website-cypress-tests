@@ -17,7 +17,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           wait-on: "https://vega.xyz"
-          record: true
+          record: false
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Recommended: pass the GitHub token lets this action correctly
