@@ -8,26 +8,17 @@ module.exports = defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      on('before:browser:launch', (browser = {}, launchOptions) => {
-        console.dir(launchOptions.args)
-        launchOptions.args.push('--disable-gpu')
-
-        return launchOptions
-      });
-      
       return require('./cypress/plugins/index.js')(on, config)
     },
     baseUrl: 'https://vega.xyz',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     testIsolation: false,
     chromeWebSecurity: false,
-     
   },
-  
-    "retries": {
-      // Configure retry attempts for `cypress run`
-      // Default is 0
-      "runMode": 0,
-    }
+  "retries": {
+    // Configure retry attempts for `cypress run`
+    // Default is 0
+    "runMode": 0,
+  }
   
 })

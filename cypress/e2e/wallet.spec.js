@@ -1,8 +1,9 @@
+const headers = require("../fixtures/headers"); 
 const mockReleases = require("../fixtures/github-releases.json");
 describe("Wallet", () => {
   it("latest wallet", () => {
     cy.intercept("GET", "https://api.github.com/repos/vegaprotocol/vegawallet-desktop/releases", mockReleases).as("getPageData");
-    cy.visit("/wallet");
+    cy.visit("/wallet", { headers })  
     cy.wait("@getPageData").then(() => {
       cy.get('[data-cy="DOWNLOAD THE VEGA DESKTOP WALLET"]').focus({ force: true, multiple: true });
       cy.get('[data-cy="downloadLink"]').each((item) => {

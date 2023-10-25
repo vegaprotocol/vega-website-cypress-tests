@@ -1,9 +1,10 @@
+const headers = require("../fixtures/headers"); 
 import { pages } from "../support/pages"
 
 pages.forEach((page) => { 
   describe(`${page.path} page links`, () => {
     before(() => {
-      cy.visit(`${page.path}`)
+      cy.visit(page.path, { headers })  
     })
   
     it('check all links in main', () => {
