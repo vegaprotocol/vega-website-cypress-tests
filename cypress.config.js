@@ -1,9 +1,8 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  screenshotOnRunFailure: false,
+  screenshotOnRunFailure: true,
   video: false,
-  projectId: 'sc38ph',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
@@ -12,13 +11,10 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://vega.xyz',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
-    testIsolation: false,
-    chromeWebSecurity: false,
   },
-  "retries": {
+  retries: {
     // Configure retry attempts for `cypress run`
     // Default is 0
-    "runMode": 0,
+    runMode: 0,
   }
-  
 })
