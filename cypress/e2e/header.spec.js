@@ -4,6 +4,6 @@ describe("Header", () => {
     cy.visit("")
     cy.wait('@getJSON').wait(300)
     cy.get('[aria-label="Switch theme color"]').trigger('click')
-    cy.get('body').should('have.class', 'light')
+    cy.get('html').should('have.class', 'light')
     });
   });

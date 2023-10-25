@@ -1,9 +1,22 @@
 Vega website Automated tests
 
-``` npm install ```
+```shell
+npm install
+```
 
 to run the tests 
-``` npm run cy:run ```
+```shell
+npm run cy:run
+```
 
-to open cypress 
-``` npm run cy:open ```
+to open cypress in interactive mode: 
+```shell
+npm run cy:open
+```
+
+# Running locally
+To run the tests against a local server, you can set the environment variable `CYPRESS_BASE_URL`:
+
+```shell
+CYPRESS_BASE_URL=http://localhost:8000 npm run cy:run
+```
