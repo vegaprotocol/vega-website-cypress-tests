@@ -4,6 +4,7 @@ import { pages } from "../support/pages"
 pages.forEach((page) => { 
   describe(`${page.path} page links`, () => {
     before(() => {
+      cy.setCookie('skip-geo-redirect', 'true')
       cy.visit(page.path, { headers })  
     })
   

@@ -2,6 +2,7 @@ const headers = require("../fixtures/headers");
 const mockReleases = require("../fixtures/github-releases.json");
 describe("Wallet", () => {
   it("latest wallet", () => {
+    cy.setCookie('skip-geo-redirect', 'true') 
     cy.intercept("GET", "https://api.github.com/repos/vegaprotocol/vegawallet-desktop/releases", mockReleases).as("getPageData");
     cy.visit("/wallet", { headers })  
     cy.wait("@getPageData").then(() => {
