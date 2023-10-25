@@ -9,6 +9,7 @@ describe("Events", () => {
   });
 
   it("There are no events", () => {
+    cy.setCookie('skip-geo-redirect', 'true')
     cy.visit("");
     cy.get('body').then((body) => {
       if (body.find('div[data-cy="thingsAreQuiet"]').length > 0) {

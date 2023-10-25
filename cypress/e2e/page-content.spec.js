@@ -6,14 +6,11 @@ pages.forEach((page) => {
     context(page.path, () => {
       before(() => {
         cy.setCookie('skip-geo-redirect', 'true')
-        cy.visit(page.path, { headers })  
+        cy.visit(page.path, { headers })
       });
   
-      it(`The page loads`, () => {
+      it(`The page loads and has a header footer and body`, () => {
         cy.title().should('eql', page.title);
-      });
-  
-      it('The page has the header, body and footer', () => {
         cy.get('header').should('be.visible');
         cy.get('div[data-cy="main"]').should('be.visible');
         cy.get('footer').should('be.visible');
