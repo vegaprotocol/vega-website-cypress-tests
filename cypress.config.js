@@ -9,6 +9,7 @@ module.exports = defineConfig({
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
       on('before:browser:launch', (browser = {}, launchOptions) => {
+        console.dir(launchOptions.args)
         launchOptions.args.push('--disable-gpu')
 
         return launchOptions
