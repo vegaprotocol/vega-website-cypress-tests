@@ -8,7 +8,7 @@
     "cy:run": "npx cypress run"
   },
   "engines": {
-    "node": "16.18.0"
+    "node": "^18"
   },
   "author": "",
   "license": "ISC",
