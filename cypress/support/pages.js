@@ -1,5 +1,5 @@
 export const pages = [
-  { path: '/', title: 'Vega Protocol - Futures DEX | Vega Protocol',
+  { path: '/', title: 'Vega Protocol - Futures & Perpetuals DEX | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/key-concepts/', title: 'Key Concepts | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
@@ -8,8 +8,6 @@ export const pages = [
   { path: '/articles/', title: 'Articles & Talks | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/community/', title: 'Community | Vega Protocol',
-    lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
-  { path: '/careers/', title: 'Careers at Vega | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/community/contributors', title: 'Contributors | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
