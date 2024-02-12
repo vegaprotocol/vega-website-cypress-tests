@@ -6,7 +6,7 @@ describe("Wallet", () => {
     cy.intercept("GET", "https://api.github.com/repos/vegaprotocol/vegawallet-desktop/releases", mockReleases).as("getPageData");
     cy.visit("/wallet", { headers })  
     cy.wait("@getPageData").then(() => {
-      cy.get('[data-cy="DOWNLOAD THE VEGA DESKTOP WALLET"]').focus({ force: true, multiple: true });
+      cy.get('[data-cy="DOWNLOAD THE VEGA DESKTOP WALLET"]').click();
       cy.get('[data-cy="downloadLink"]').each((item) => {
         cy.wrap(item).should("have.attr", "href").and("include", "latest");
       });
