@@ -19,6 +19,4 @@ export const pages = [
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/market-creation', title: 'Market Creation with Vega | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
-  { path: '/builders-club/', title: 'Builders Club | Vega Protocol',
-    lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } }
 ]
