@@ -11,8 +11,6 @@ export const pages = [
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/community/contributors', title: 'Contributors | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
-  { path: '/community/ambassadors', title: 'Ambassadors | Vega Protocol',
-    lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/wallet', title: 'Wallet | Vega Protocol',
     lighthouse: { performance: 60,accessibility: 100, "best-practices": 90, seo: 85, pwa: 100, } },
   { path: '/governance', title: 'Governance Home | Vega Protocol',
